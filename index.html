@@ -8,6 +8,6 @@ hostname="$($CURL $url_hostname)"
 private_ip="$($CURL $url_private_ip)"
 public_ip="$($CURL $url_public_ip)"
 
-printf "COREOS_CUSTOM_HOSTNAME=$hostname\n" > test.txt
-printf "COREOS_CUSTOM_PRIVATE_IPV4=$private_ip\n" >> test.txt
-printf "COREOS_CUSTOM_PUBLIC_IPV4=$public_ip" >> test.txt
+printf "COREOS_CUSTOM_HOSTNAME=$hostname\n" > /run/metadata/coreos
+printf "COREOS_CUSTOM_PRIVATE_IPV4=$private_ip\n" >> /run/metadata/coreos
+printf "COREOS_CUSTOM_PUBLIC_IPV4=$public_ip" >> /run/metadata/coreos
